@@ -243,7 +243,7 @@ public:
      * @param src the source association
      * @param dst the destination to connect the source to.
      */
-    bool routeAssociations(string src, string dst) {
+    bool connectAssociations(string src, string dst) {
         if (associationTable.count(src) && associationTable.count(dst)) {
             crossPointConnect(crosspointLookup[associationTable[src]->xp1], crosspointLookup[associationTable[dst]->xp1]);
             crossPointConnect(crosspointLookup[associationTable[src]->xp2], crosspointLookup[associationTable[dst]->xp2]);
@@ -257,7 +257,7 @@ public:
      * @param src the source association
      * @param dst the destination to disconnect from the source.
      */
-    bool unRouteAssociations(string src, string dst) {
+    bool disconnectAssociations(string src, string dst) {
         if (associationTable.count(src) && associationTable.count(dst)) {
             crossPointDisconnect(crosspointLookup[associationTable[src]->xp1], crosspointLookup[associationTable[dst]->xp1]);
             crossPointDisconnect(crosspointLookup[associationTable[src]->xp2], crosspointLookup[associationTable[dst]->xp2]);
